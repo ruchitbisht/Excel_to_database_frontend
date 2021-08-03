@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="card">
+    <div class="temp">
+      <button (click)="downloadFile()" class="btn btn-success">
+        Download Template
+      </button>
+    </div>
+
+    <div class="text-center">
+      <label for="file">Choose File</label>
+      <input type="file" id="file" (change)="onChange($event)" />
+      <button (click)="onUpload()" class="btn btn-success">Upload</button>
+    </div>
+
+    
+
+    <div class="container" *ngIf="loading">
+      <h3 style="text-align: center; font-weight: 400;">Loading ...</h3>
+    </div>
+  </div>
+</div>

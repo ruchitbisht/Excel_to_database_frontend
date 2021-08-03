@@ -1,0 +1,41 @@
+.button{
+    text-align: center;
+}
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    color: black;
+   
+
+  }
+  .no-outline:focus {
+    outline: none;
+  }
+  .cn{
+      padding: 4px;
+      font-weight: 600;
+      width: 500px;
+      color: black;
+      margin: auto;  
+  }
+  .cns{
+    background-color: white;
+  }
+  .card{
+      padding:30px;
+      width: 1200px;
+  }
+  .head{
+      padding-bottom: 40px;
+      font-weight: 600;
+  }
+  .area{
+    background-color: white;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    color: black;
+ }

@@ -1,1 +1,532 @@
-<p>update-file works!</p>
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="card">
+      <h1 style="text-align: center; font-weight: 600; padding: 15px;">Update Data</h1>
+      <form (ngSubmit)="onSubmit()" >
+
+          <div class="form-group row">
+            <label  class="col-sm-2 col-form-label" >Customer Name </label>
+            <div class="col-sm-10">
+            <input 
+              type="text"
+              name="customerName"
+              class="form-control cns "
+              [(ngModel)]="file.customerName"
+            />
+          </div>
+        </div>
+  
+          <div class="form-group row">
+            <label  class="col-sm-2 col-form-label">Customer Code</label>
+            <div class="col-sm-10">
+            <input
+              type="text"
+              name="customerCode"
+              class="form-control"
+              placeholder="Customer Code"
+              [(ngModel)]="file.customerCode"
+            />
+          </div>
+
+        </div>
+  
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Site Name</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="siteName"
+              class="form-control"
+              placeholder="Site Name"
+              [(ngModel)]="file.siteName"
+            />
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Site Address </label>
+          <div class="col-sm-10">
+            <textarea
+              class="form-control"
+              name="siteAddress"
+              [(ngModel)]="file.siteAddress"
+            ></textarea>
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">City</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="city"
+              class="form-control"
+              placeholder="City"
+              [(ngModel)]="file.city"
+            />
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">State</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="state"
+              class="form-control"
+              placeholder="State"
+              [(ngModel)]="file.state"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Local Contact Person Name</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="localContactPersonName"
+              class="form-control"
+              placeholder="Local Contact Person Name"
+              [(ngModel)]="file.localContactPersonName"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Local Person Contact </label>
+          <div class="col-sm-10">
+            <input
+              type="number"
+              name="localPersonContact"
+              class="form-control"
+              placeholder="Local Person Contact"
+              [(ngModel)]="file.localPersonContact"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Type of Charger</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="typeOfCharger"
+              class="form-control"
+              placeholder="Type of Charger"
+              [(ngModel)]="file.typeOfCharger"
+            />
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Model</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="model"
+              class="form-control"
+              placeholder="Model"
+              [(ngModel)]="file.model"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Serial Number</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="serialNumber"
+              class="form-control"
+              placeholder="D91810242830016"
+              [(ngModel)]="file.serialNumber"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Final Installation Status</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="finalInstallationStatus"
+              class="form-control"
+              placeholder="Final Installation Status"
+              [(ngModel)]="file.finalInstallationStatus"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Installation Status</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="installationStatus"
+              class="form-control"
+              placeholder="Installation Status"
+              [(ngModel)]="file.installationStatus"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Commissioning status </label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="commissioningStatus"
+              class="form-control"
+              placeholder="Commissioning status"
+              [(ngModel)]="file.commissioningStatus"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label"
+            >Commissioned By (Exicom Eng Name)</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="commissionedBy"
+              class="form-control"
+              placeholder="Exicom Eng Name"
+              [(ngModel)]="file.commissionedBy"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Commissioning Date</label>
+          <div class="col-sm-10">
+            <input
+              type="date"
+              name="commissioningDate"
+              class="form-control"
+              placeholder="DD-MMM-YYYY"
+              [(ngModel)]="file.commissioningDate"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 1 Status</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM1Status"
+              class="form-control"
+              placeholder="PM 1 Status"
+              [(ngModel)]="file.pM1Status"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 1 Done On</label>
+          <div class="col-sm-10">
+            <input
+              type="date"
+              name="pM1DoneOn"
+              class="form-control"
+              placeholder="Done On"
+              [(ngModel)]="file.pM1DoneOn"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 1 Done (Engineer Name)</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM1Done"
+              class="form-control"
+              placeholder="Engineer Name"
+              [(ngModel)]="file.pM1Done"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 1 Remarks</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM1Remarks"
+              class="form-control"
+              placeholder="Remarks"
+              [(ngModel)]="file.pM1Remarks"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label"> SW Update</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="sWUpdate"
+              class="form-control"
+              placeholder="SW Update"
+              [(ngModel)]="file.sWUpdate"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label"> PM Due Date</label>
+          <div class="colxf-sm-10">
+            <input
+              type="date"
+              name="pMDueDate"
+              class="form-control"
+              placeholder="PM Due Date"
+              [(ngModel)]="file.pMDueDate"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 2 Status</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM2Status"
+              class="form-control"
+              placeholder="Status"
+              [(ngModel)]="file.pM2Status"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 2 Done On</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM2DoneOn"
+              class="form-control"
+              placeholder="Done On"
+              [(ngModel)]="file.pM2DoneOn"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 2 Done (Engineer Name)</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM2Done"
+              class="form-control"
+              placeholder="Engineer Name"
+              [(ngModel)]="file.pM2Done"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 2 Remarks</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM2Remarks"
+              class="form-control"
+              placeholder="Remarks"
+              [(ngModel)]="file.pM2Remarks"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 3 Status</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM3Status"
+              class="form-control"
+              placeholder="Status"
+              [(ngModel)]="file.pM3DoneOn"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 3 Done On</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              pM3DoneOn
+              class="form-control"
+              placeholder="Done On"
+              [(ngModel)]="file.pM3DoneOn"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 3 Done (Engineer Name)</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM3Done"
+              class="form-control"
+              placeholder="Engineer Name"
+              [(ngModel)]="file.pM3Done"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 3 Remarks</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM3Remarks"
+              class="form-control"
+              placeholder="Remarks"
+              [(ngModel)]="file.pM3Remarks"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 4 Status</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM4Status"
+              class="form-control"
+              placeholder="Status"
+              [(ngModel)]="file.pM4Status"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 4 Done On</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              pM4DoneOn
+              class="form-control"
+              placeholder="Done On"
+              [(ngModel)]="file.pM4DoneOn"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 4 Done (Engineer Name)</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM4Done"
+              class="form-control"
+              placeholder="Engineer Name"
+              [(ngModel)]="file.pM4Done"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 4 Remarks</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM4Remarks"
+              class="form-control"
+              placeholder="Remarks"
+              [(ngModel)]="file.pM4Remarks"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 5 Status</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM5Status"
+              class="form-control"
+              placeholder="Status"
+              [(ngModel)]="file.pM5Status"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 5 Done On</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              pM5DoneOn
+              class="form-control"
+              placeholder="Done On"
+              [(ngModel)]="file.pM5DoneOn"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 5 Done (Engineer Name)</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM5Done"
+              class="form-control"
+              placeholder="Engineer Name"
+              [(ngModel)]="file.pM5Done"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 5 Remarks</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM5Remarks"
+              class="form-control"
+              placeholder="Remarks"
+              [(ngModel)]="file.pM5Remarks"
+            />
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 6 Status</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM6Status"
+              class="form-control"
+              placeholder="Status"
+              [(ngModel)]="file.pM6Status"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 6 Done On</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              pM6DoneOn
+              class="form-control"
+              placeholder="Done On"
+              [(ngModel)]="file.pM6DoneOn"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 6 Done (Engineer Name)</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM6Done"
+              class="form-control"
+              placeholder="Engineer Name"
+              [(ngModel)]="file.pM6Done"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">PM 6 Remarks</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              name="pM6Remarks"
+              class="form-control"
+              placeholder="Remarks"
+              [(ngModel)]="file.pM6Remarks"
+            />
+          </div>
+        </div>
+        <div class="button">
+        <button
+          type="submit"
+          class="btn btn-success" 
+          style="margin: 15px"
+          >
+         Update
+        </button>
+        <button type="reset" (click)="onCancel()" class="btn btn-secondary">Cancel</button>
+      </div>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,25 @@
+<div style="text-align: center; width: 100%;" >
+    <nav class="navbar navbar-expand-sm  navbar-dark navcolor " id="nav"  >
+        <ul class="navbar-nav">
+          <li class="nav-item imgs">
+            <img src="../assets/logo.png" >
+          </li>
+          <li class="nav-item active">
+            <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active"  >PM Tracker</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/add']" routerLinkActive="router-link-active" (click)="refresh()" >Add New</a>          
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/show']" routerLinkActive="router-link-active" >Show Data</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" (click)="downloadFile()">Download Template</a>          
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active" (click)="refresh()" >Upload File</a>
+          </li>
+        </ul>
+        
+    </nav>
+  </div> 
