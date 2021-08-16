@@ -1,0 +1,59 @@
+<table mat-table [dataSource]="filee" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="srNo">
+      <th mat-header-cell *matHeaderCellDef> srNo</th>
+      <td mat-cell *matCellDef="let element"> {{element.srNo}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="customerName">
+      <th mat-header-cell *matHeaderCellDef>Customer Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.customerName}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="customerCode">
+      <th mat-header-cell *matHeaderCellDef> Customer Code </th>
+      <td mat-cell *matCellDef="let element"> {{element.customerCode}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="siteName">
+      <th mat-header-cell *matHeaderCellDef> Symbol </th>
+      <td mat-cell *matCellDef="let element"> {{element.siteName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="siteAddress">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.siteAddress}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="state">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+      </ng-container>
+<!-- 
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.localContactPersonName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.localPersonContact}} </td>
+      </ng-container>
+   -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  

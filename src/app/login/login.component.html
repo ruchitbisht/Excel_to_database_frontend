@@ -1,0 +1,62 @@
+
+<div class="modal fade" bsModal   tabindex="-1" role="dialog"
+aria-labelledby="create-account">
+<div class="modal-dialog modal-sm">
+  <div class="modal-content">
+     Modal body
+    <div class="modal-body" style="text-align: center">
+      
+      <br>
+      <div class="text-right">
+        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" >Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<ngx-spinner size="medium" color="#fff" type="line-scale-party">
+<p style="font-size: 20px; color: rgb(255, 255, 255)">Loading...</p>
+</ngx-spinner>
+<br>
+<br>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-6">
+    <div style="margin: 12%;
+                padding: 20px 20px;
+                background-color: rgba(255, 255, 255, .8);
+                border-radius: 13px;">
+      <div class="image text-center">
+        <img src="assets/logo.png" alt="">
+      </div>
+      <br>
+      <div class="panel">
+        
+        <div class="panel-body">
+          <span>
+            Username
+          </span>
+          <input  type="text" [(ngModel)]="logdata.userName"  autocomplete="off" placeholder="email" />
+          <br>
+          <span>
+            Password
+          </span>
+          <input type="password" [(ngModel)]="logdata.password"   autocomplete="off" placeholder="Password" />
+          <br>
+          <button type="submit" (click)="validLogin()"  class="btn btn-block btn-primary">Login</button>
+          <br>
+          <div>
+            <a [routerLink]="['/forgetpass']">Forgot password ?</a>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-6 logo">
+    <img src="assets/Pulse.jpg" style="width: 100%;height: auto;" alt="">
+  </div>
+</div>
+</div>

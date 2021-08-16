@@ -1,4 +1,3 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FileRequest } from 'src/app/model/file.model';
@@ -17,7 +16,6 @@ export class InsertRowComponent implements OnInit {
   constructor(private fileService:FileService, private router:Router) { }
 
   ngOnInit(): void {  
-    this.router.navigate(['/add'])
   }
 
   doSubmitForm(){

@@ -5,7 +5,7 @@
           <img src="../assets/logo.png" >
         </li>
         <li class="nav-item active">
-          <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active" >PM Tracker</a>
+          <a class="navbar-brand" [routerLink]="['/login']" routerLinkActive="router-link-active" >PM Tracker</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/add']" routerLinkActive="router-link-active" >Add New</a>          
@@ -14,7 +14,7 @@
           <a class="nav-link" [routerLink]="['/show']" routerLinkActive="router-link-active" (click)="showList()">Show Data</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" (click)="downloadFile()">Download Template</a>          
+          <a class="nav-link anchor1" (click)="downloadFile()">Download Template</a>          
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active" >Upload File</a>
@@ -23,63 +23,245 @@
       
   </nav>
 
-<div class="paginationBar">
-<nav aria-label="Page navigation example ">
-  <ul class="pagination bars">
+<!-- <div class="paginationBar"> -->
+<!-- <nav aria-label="Page navigation example "> -->
+  <!-- <ul class="pagination bars " style="margin-bottom: 0%;padding-bottom: 0%;">
     <li class="page-item"><a class="page-link" (click)="previous()" >Previous</a></li>
-    <li class="page-item"><a class="page-link" (click)="next()">Next</a></li>
-  </ul>
-</nav>
-</div>
+    <li class="page-item"><button class="page-link" (click)="next()" >Next</button></li> -->
+    <!-- <li> -->
+    <input hidden type="search" #search (keyup)="filterData()"  placeholder="Search">
+  <!-- </li> -->
+  <!-- </ul> -->
+<!-- </nav> -->
+<!-- </div> -->
 <div class="panel panel-primary" id="cards">
     <div class="panel-body">
         <table class="table table-striped table sticky" cellspacing="0" width="100%">
             <thead style="text-align: center;">
                 <tr>
-                    <th>Actions</th>
-                    <th>Sr.No.</th>
-                    <th>Customer Name</th>
-                    <th>Customer Code</th>
-                    <th>Site Name</th>
-                    <th style="width: 17cm">Site Address</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>Local Contact Person Name</th>
-                    <th>Local Person Contact</th>
-                    <th>Type of Charger</th>
-                    <th>Model</th>
-                    <th>Serial Number</th>
-                    <th>Final Installation Status</th>
-                    <th>Installation Status</th>
-                    <th>Commissioning status</th>
-                    <th>Commissioned By (Exicom Eng Name)</th>
-                    <th>Commissioning Date</th>
-                    <!-- <th>PM 1 Status</th>
-                    <th>PM 1 Done On</th>
-                    <th>PM 1 Done (Engineer Name)</th>
-                    <th>PM 1 Remarks</th>
-                    <th>SW Update</th>
-                    <th>PM Due Date</th>
-                    <th>PM 2 Status</th>
-                    <th>PM 2 Done On</th>
-                    <th>PM 2 Done (Engineer Name)</th>
-                    <th>PM 2 Remarks</th>
-                    <th>PM 3 Status</th>
-                    <th>PM 3 Done On</th>
-                    <th>PM 3 Done (Engineer Name)</th>
-                    <th>PM 3 Remarks</th>
-                    <th>PM 4 Status</th>
-                    <th>PM 4 Done On</th>
-                    <th>PM 4 Done (Engineer Name)</th>
-                    <th>PM 4 Remarks</th>
-                    <th>PM 5 Status</th>
-                    <th>PM 5 Done On</th>
-                    <th>PM 5 Done (Engineer Name)</th>
-                    <th>PM 5 Remarks</th>
-                    <th>PM 6 Status</th>
-                    <th>PM 6 Done On</th>
-                    <th>PM 6 Done (Engineer Name)</th>
-                    <th>PM 6 Remarks</th> -->
+                   <th class="padding12">Actions</th>
+                     <th class="padding12">Sr.No </th>
+
+                    <th>
+                      <label *ngIf="tick1==false">Customer Name</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;" *ngIf="tick1==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick1()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick1()" *ngIf="tick1==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th>
+                      <label *ngIf="tick2==false">Customer Code</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;"  *ngIf="tick2==true">
+                      <input  matInput type="search" #cCode (keyup)="filterCustomerCode()">
+                      <mat-icon matSuffix (click)="elseClick2()">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick2()" *ngIf="tick2==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th>
+                      <label *ngIf="tick3==false">Site Name</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;" *ngIf="tick3==true">
+                      <input  matInput type="search" style="height: 10px;" #sName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick3()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick3()" *ngIf="tick3==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th style="width: 17cm">
+                      <label *ngIf="tick4==false">Site Address</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;height: 12px;" *ngIf="tick4==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick4()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick4()" *ngIf="tick4==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th>
+                      <label *ngIf="tick5==false">City</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;height: 12px;" *ngIf="tick5==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick5()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick5()" *ngIf="tick5==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th>
+                      <label *ngIf="tick6==false">State</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;height: 12px;" *ngIf="tick6==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick6()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick6()" *ngIf="tick6==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th>
+                      <label *ngIf="tick7==false">Local Contact Person Name</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;height: 12px;" *ngIf="tick7==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick7()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick7()" *ngIf="tick7==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th>
+                      <label *ngIf="tick8==false">Local Person Contact</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;height: 12px;" *ngIf="tick8==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick8()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick8()" *ngIf="tick8==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th>
+                      <label *ngIf="tick9==false">Type of Charger</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;height: 12px;" *ngIf="tick9==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick9()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick9()" *ngIf="tick9==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th>
+                      <label *ngIf="tick10==false">Model</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;height: 12px;" *ngIf="tick10==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick10()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick10()" *ngIf="tick10==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th>
+                      <label *ngIf="tick11==false">Serial Number</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;height: 12px;" *ngIf="tick11==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick11()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick11()" *ngIf="tick11==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th>
+                      <label *ngIf="tick12==false">Final Installation Status</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;height: 12px;" *ngIf="tick12==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick12()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick12()" *ngIf="tick12==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th>
+                      <label *ngIf="tick13==false">Installation Status</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;height: 12px;" *ngIf="tick13==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick13()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick13()" *ngIf="tick13==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th>
+                      <label *ngIf="tick14==false">Commissioning status</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;height: 12px;" *ngIf="tick14==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick14()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick14()" *ngIf="tick14==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <th>
+                      <label *ngIf="tick15==false">Commissioned By (Exicom Eng Name)</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;height: 12px;" *ngIf="tick15==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick15()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick15()" *ngIf="tick15==false"> <span > search</span></mat-icon>
+                    </th>
+
+                    <!-- <th>
+                      <label *ngIf="tick16==false">Commissioning Date</label>
+                      <mat-form-field appearance="outline" style="margin-bottom: -1.25em;height: 12px;" *ngIf="tick16==true">
+                      <input  matInput type="search" style="height: 10px;" #cName (keyup)="filterCustomerName()">
+                      <mat-icon matSuffix (click)="elseClick1()" style="cursor: pointer;">highlight_off</mat-icon>
+                      </mat-form-field>
+                      <mat-icon  (click)="ifClick16()" *ngIf="tick16==false"> <span > search</span></mat-icon>
+                    </th> -->
+
+                    <!-- <th><label *ngIf="tick1==false">Customer Name</label>
+                      <input *ngIf="tick1==true"  type="search" id="searchbox" class="rounded setting"  placeholder="Customer Name" #cName (keyup)="filterCustomerName()" >
+                      <mat-icon *ngIf="tick1==true" (click)="elseClick1()"><span class="padding2">highlight_off</span></mat-icon>    
+                      <mat-icon  (click)="ifClick1()" *ngIf="tick1==false"> <span class="padding1"> search</span></mat-icon> </th> -->
+
+                    <!-- <th> <label *ngIf="tick2==false">Customer Code</label>
+                       <input *ngIf="tick2==true" type="search" class="rounded setting" placeholder="Customer Code" #cCode (keyup)="filterCustomerCode()" > 
+                     <mat-icon *ngIf="tick2==true" (click)="elseClick2()"><span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick2()" *ngIf="tick2==false">  <span class="padding1"> search</span></mat-icon></th> -->
+
+                    <!-- <th> <label *ngIf="tick3==false">Site Name</label>
+                      <input *ngIf="tick3==true" type="search" class="rounded setting" placeholder="Site Name" #sName (keyup)="filterSiteName()" > 
+                      <mat-icon *ngIf="tick3==true" (click)="elseClick3()"><span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick3()" *ngIf="tick3==false">  <span class="padding1"> search</span></mat-icon></th>
+
+                    <th style="width: 17cm"> <label *ngIf="tick4==false">Site Address</label>
+                      <input *ngIf="tick4==true" type="search" class="rounded setting" placeholder="Site Address" #sAddress (keyup)="filterSiteAddress()"> 
+                      <mat-icon *ngIf="tick4==true" (click)="elseClick4()"><span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick4()" *ngIf="tick4==false">  <span class="padding1"> search</span></mat-icon></th>
+
+                    <th> <label *ngIf="tick5==false">City</label>
+                      <input *ngIf="tick5==true" type="search" class="rounded setting" placeholder="City" #city (keyup)="filterCity()"> 
+                      <mat-icon *ngIf="tick5==true" (click)="elseClick5()"><span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick5()" *ngIf="tick5==false">  <span class="padding1"> search</span></mat-icon></th>
+
+                    <th> <label *ngIf="tick6==false">State</label>
+                      <input *ngIf="tick6==true" type="search" class="rounded setting" placeholder="State" #state (keyup)="filterState()"> 
+                      <mat-icon *ngIf="tick6==true" (click)="elseClick6()"><span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick6()" *ngIf="tick6==false">  <span class="padding1"> search</span></mat-icon></th>
+
+                    <th> <label *ngIf="tick7==false">Local Contact Person Name</label>
+                      <input *ngIf="tick7==true" type="search" class="rounded setting" placeholder="Local Contact Person Name" #lCPName (keyup)="filterLocalContactPersonName()"> 
+                      <mat-icon *ngIf="tick7==true" (click)="elseClick7()"><span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick7()" *ngIf="tick7==false">  <span class="padding1"> search</span></mat-icon></th>
+
+                    <th> <label *ngIf="tick8==false">Local Person Contact</label>
+                      <input *ngIf="tick8==true" type="search" class="rounded setting" placeholder="Local Person Contact" #lPContact (keyup)="filterLocalPersonContact()"> 
+                      <mat-icon *ngIf="tick8==true" (click)="elseClick8()"><span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick8()" *ngIf="tick8==false">  <span class="padding1"> search</span></mat-icon></th>
+
+                    <th> <label *ngIf="tick9==false">Type of Charger</label>
+                      <input *ngIf="tick9==true" type="search" class="rounded setting" placeholder="Type of Charger" #tOCharger (keyup)="filterTypeOfCharger()"> 
+                      <mat-icon *ngIf="tick9==true" (click)="elseClick9()"><span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick9()" *ngIf="tick9==false">  <span class="padding1"> search</span></mat-icon></th>
+
+                    <th> <label *ngIf="tick10==false">Model</label>
+                      <input *ngIf="tick10==true" type="search" class="rounded setting" placeholder="Model" #model (keyup)="filterModel()"> 
+                      <mat-icon *ngIf="tick10==true" (click)="elseClick10()"><span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick10()" *ngIf="tick10==false">  <span class="padding1"> search</span></mat-icon></th>
+
+                    <th><label *ngIf="tick11==false">Serial Number</label>
+                      <input *ngIf="tick11==true" type="search" class="rounded setting" placeholder="Serial Number" #sNumber (keyup)="filterSerialNumber()"> 
+                      <mat-icon *ngIf="tick11==true" (click)="elseClick11()"><span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick11()" *ngIf="tick11==false">  <span class="padding1"> search</span></mat-icon></th>
+
+                    <th><label *ngIf="tick12==false">Final Installation Status</label>
+                      <input *ngIf="tick12==true" type="search" class="rounded setting" placeholder="Final Installation Status" #fIStatus (keyup)="filterFinalInstallationStatus()"> 
+                      <mat-icon *ngIf="tick12==true" (click)="elseClick12()"><span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick12()" *ngIf="tick12==false">  <span class="padding1"> search</span></mat-icon></th>
+
+                    <th><label *ngIf="tick13==false">Installation Status</label>
+                      <input *ngIf="tick13==true" type="search" class="rounded setting" placeholder="Installation Status" #iStatus (keyup)="filterInstallationStatus()"> 
+                      <mat-icon *ngIf="tick13==true" (click)="elseClick13()"><span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick13()" *ngIf="tick13==false">  <span class="padding1"> search</span></mat-icon></th>
+
+                    <th><label *ngIf="tick14==false">Commissioning status</label>
+                      <input *ngIf="tick14==true" type="search" class="rounded setting" placeholder="Commissioning status" #cStatus (keyup)="filterCommissioningStatus()"> 
+                      <mat-icon *ngIf="tick14==true" (click)="elseClick14()"><span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick14()" *ngIf="tick14==false">  <span class="padding1"> search</span></mat-icon></th>
+
+                    <th><label *ngIf="tick15==false">Commissioned By (Exicom Eng Name)</label>
+                      <input *ngIf="tick15==true" type="search" class="rounded setting" placeholder="Commissioned By (Exicom Eng Name)" #cBy (keyup)="filterCommissionedBy()"> 
+                      <mat-icon *ngIf="tick15==true"(click)="elseClick15()" > <span class="padding2">highlight_off</span></mat-icon>   
+                      <mat-icon (click)="ifClick15()" *ngIf="tick15==false">  <span class="padding1"> search</span></mat-icon></th>  -->
+
+                    <th class="padding12">Commissioning Date </th>
                     
                 </tr>
             </thead>
@@ -105,23 +287,28 @@
                     <td>{{file.installationStatus}}</td>
                     <td>{{file.commissioningStatus}}</td>
                     <td>{{file.commissionedBy}}</td>
-                    <td>{{file.commissioningDate}}</td>
-                   
-                            
+                    <td>{{file.commissioningDate}}</td>       
                 </tr>
-
-
             </tbody>
         </table>
     </div>
 </div>
 
 <div class="kar">
-  <nav aria-label="Page navigation example ">
+  <!-- <nav aria-label="Page navigation example ">
     <ul class="pagination bars">
       <li class="page-item"><a class="page-link" (click)="previous()" >Previous</a></li>
       <li class="page-item"><a class="page-link" (click)="next()">Next</a></li>
     </ul>
-  </nav>
+  </nav> -->
   </div>
+  <div style="position: absolute;">
+  <mat-paginator [length]="totalElement"
+              [pageSize]="20"
+              [pageSizeOptions]="[10, 20, 25, 100]"
+              showFirstLastButtons
+              aria-label="Select page"
+              (page)="onPagenation($event)" >
+</mat-paginator>
+</div>
 </div> 

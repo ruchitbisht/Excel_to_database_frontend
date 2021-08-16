@@ -2,7 +2,7 @@
 .table.sticky th{
     position: sticky;
     top:0;
-    background-color: #2c81b6;
+    background-color: #FFFFFF;
     border-color:#4d4949;
 }
 td{
@@ -32,6 +32,7 @@ button{
 }
 .navcolor{
     background-color: #2c81b6; 
+    background-position-x:fixed ;
 }
 .imgs{
     text-align: right;
@@ -47,4 +48,40 @@ img{
 .overall{
     width:max-content ;
 }
+.setting{
+    border-color: #E0E0E0;
+    text-align: left;
+}
 
+.padding1
+{
+    position: absolute;
+    top: 20px;
+    padding: 0px;
+}
+
+/* .padding2
+{
+    position: absolute;
+    top: 20px;
+    padding: 0px;
+} */
+
+/* mat-icon{
+    width: 25px;
+    cursor: pointer;
+} */
+
+.padding12{
+    position: absolute;
+    padding-bottom: 20px;
+}
+.anchor1{
+    cursor: pointer;
+}
+.padding1{
+    cursor: pointer;
+}
+span{
+    cursor: pointer; 
+}

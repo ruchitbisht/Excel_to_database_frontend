@@ -1,11 +1,9 @@
+
+.buttons{
+  text-align: center;
+}
 .card{
   background: white;
   width: 100%;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.buttons{
-  text-align: center;
+  padding: 20px;
 }

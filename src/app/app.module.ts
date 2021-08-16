@@ -16,12 +16,22 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import { NgModule } from '@angular/core';
+import { NgModule ,ViewChild, ElementRef  } from '@angular/core';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import {DataTablesModule} from 'angular-datatables';
 import { ViewComponent } from './file/view/view.component';
 import { FilterPipe } from './filter.pipe';
 import { NavbarComponent } from './file/navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import {NgxSpinnerModule} from 'ngx-spinner';
+import {MatSelectModule} from '@angular/material/select';
+import { TableComponent } from './file/table/table.component';
+import {MatTableModule} from '@angular/material/table';
+// import {MatPaginatorIntl} from '@angular/material';
+// import { TranslateService } from '@ngx-translate/core';
+
+
+
 
 
 
@@ -34,7 +44,9 @@ import { NavbarComponent } from './file/navbar/navbar.component';
     HomeComponent,
     ViewComponent,
     FilterPipe,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -45,12 +57,15 @@ import { NavbarComponent } from './file/navbar/navbar.component';
     MatPaginatorModule,
     MatInputModule,
     MatFormFieldModule,
+    MatSelectModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     FormsModule,
     DataTablesModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule,
+    MatTableModule
   ],
   providers: [FileService],
   bootstrap: [AppComponent]
